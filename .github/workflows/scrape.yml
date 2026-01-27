@@ -50,6 +50,7 @@ jobs:
 
   deploy:
     needs: scrape
+    if: always()  # Deploy even if scrape fails (shows placeholder page)
     runs-on: ubuntu-latest
     environment:
       name: github-pages
