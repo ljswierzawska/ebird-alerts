@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBird Rare Bird Alerts</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c5530;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h1::before {
+            content: "🐦";
+        }
+        .stats {
+            background: #e8f5e9;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5530;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+        table.dataTable {
+            width: 100% !important;
+        }
+        table.dataTable thead th {
+            background: #2c5530;
+            color: white;
+        }
+        table.dataTable tbody tr:hover {
+            background: #f0f7f0 !important;
+        }
+        .species-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .species-link:hover {
+            text-decoration: underline;
+        }
+        .location-link {
+            color: #666;
+            text-decoration: none;
+        }
+        .location-link:hover {
+            color: #1a73e8;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        .empty-state h2 {
+            color: #2c5530;
+        }
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>eBird Rare Bird Alerts</h1>
+
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-value">0</span>
+                <span class="stat-label">Total Sightings</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">0</span>
+                <span class="stat-label">Unique Species</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">Awaiting first run</span>
+                <span class="stat-label">Last Updated</span>
+            </div>
+        </div>
+
+        <div class="empty-state">
+            <h2>No sightings yet</h2>
+            <p>The scraper hasn't run yet. Sightings will appear here after the first GitHub Actions run.</p>
+            <p>Trigger a manual run from the Actions tab, or wait for the daily scheduled run.</p>
+        </div>
+
+        <table id="sightings-table" class="display" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Species</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Observer</th>
+                    <th>Count</th>
+                    <th>Scraped</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <footer>
+            Data scraped from <a href="https://ebird.org">eBird</a> |
+            Auto-updated daily via GitHub Actions
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#sightings-table').DataTable({
+                pageLength: 25,
+                order: [[5, 'desc']],
+                responsive: true,
+                language: {
+                    search: "Filter:",
+                    lengthMenu: "Show _MENU_ sightings",
+                    info: "Showing _START_ to _END_ of _TOTAL_ sightings",
+                }
+            });
+        });
+    </script>
+</body>
+</html>
