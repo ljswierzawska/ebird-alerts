@@ -34,7 +34,7 @@ def scrape_alerts(page) -> list[dict]:
 
     # Wait for content to load
     print("Waiting for page content...")
-    page.wait_for_selector('body', timeout=30000)
+    page.wait_for_selector('.Observation', timeout=30000)
 
     # Give JavaScript time to render
     page.wait_for_timeout(3000)
@@ -45,107 +45,98 @@ def scrape_alerts(page) -> list[dict]:
     sightings = []
     scrape_timestamp = datetime.utcnow().isoformat() + "Z"
 
-    # Try multiple selectors for different page structures
-    # eBird uses various layouts for alerts
+    # Find all observation divs
+    observations = soup.select('div.Observation')
+    print(f"Found {len(observations)} observation elements")
 
-    # Method 1: Look for observation rows in tables
-    for row in soup.select('tr.Observation-row, tr[data-species], .Observation'):
-        sighting = parse_observation_row(row, scrape_timestamp)
+    for obs in observations:
+        sighting = parse_observation(obs, scrape_timestamp)
         if sighting:
             sightings.append(sighting)
 
-    # Method 2: Look for species sections
-    if not sightings:
-        for section in soup.select('.Observation-species, .species-section, [class*="species"]'):
-            sighting = parse_species_section(section, scrape_timestamp)
-            if sighting:
-                sightings.append(sighting)
-
-    # Method 3: Generic parsing of any structured data
-    if not sightings:
-        sightings = parse_generic_alerts(soup, scrape_timestamp)
-
-    print(f"Found {len(sightings)} sightings")
+    print(f"Parsed {len(sightings)} sightings")
     return sightings
 
 
-def parse_observation_row(row, timestamp: str) -> dict | None:
-    """Parse a single observation row."""
+def parse_observation(obs, timestamp: str) -> dict | None:
+    """Parse a single eBird observation div."""
     try:
-        species_el = row.select_one('.Observation-species, .species-name, a[href*="species"]')
-        location_el = row.select_one('.Observation-location, .location, a[href*="hotspot"]')
-        date_el = row.select_one('.Observation-date, .date, time')
-        observer_el = row.select_one('.Observation-observer, .observer, a[href*="profile"]')
-        count_el = row.select_one('.Observation-count, .count')
-
-        species = species_el.get_text(strip=True) if species_el else None
-        if not species:
+        # Species name - from .Heading-main
+        species_el = obs.select_one('.Observation-species .Heading-main')
+        if not species_el:
             return None
+        species = species_el.get_text(strip=True)
+
+        # Scientific name - from .Heading-sub
+        sci_name_el = obs.select_one('.Observation-species .Heading-sub')
+        sci_name = sci_name_el.get_text(strip=True) if sci_name_el else ""
+
+        # Species URL
+        species_link = obs.select_one('.Observation-species a[data-species-code]')
+        species_url = ""
+        if species_link and species_link.get('href'):
+            href = species_link['href']
+            species_url = "https://ebird.org" + href if href.startswith('/') else href
+
+        # Count - from .Observation-numberObserved
+        count_el = obs.select_one('.Observation-numberObserved span')
+        count = count_el.get_text(strip=True) if count_el else "1"
+
+        # Date - from link to checklist
+        date_el = obs.select_one('.Observation-meta a[href*="/checklist/"]')
+        date = date_el.get_text(strip=True) if date_el else "Unknown"
+
+        # Checklist URL
+        checklist_url = ""
+        if date_el and date_el.get('href'):
+            href = date_el['href']
+            checklist_url = "https://ebird.org" + href if href.startswith('/') else href
+
+        # Location - from Google Maps link
+        location_el = obs.select_one('.Observation-meta a[href*="google.com/maps"]')
+        location = location_el.get_text(strip=True) if location_el else "Unknown"
+        location_url = location_el['href'] if location_el and location_el.get('href') else ""
+
+        # Observer - from the GridFlex-cell containing user icon
+        # The observer is in the third GridFlex-cell in the meta section
+        meta_cells = obs.select('.Observation-meta .GridFlex-cell.u-md-size1of4')
+        observer = "Unknown"
+        for cell in meta_cells:
+            # Check if this cell contains the user icon
+            if cell.select_one('svg.Icon--user, [class*="Icon--user"]'):
+                observer_span = cell.select_one('.u-sizeFill span:not(.is-visuallyHidden)')
+                if observer_span:
+                    observer = observer_span.get_text(strip=True)
+                break
+
+        # If we didn't find observer via icon, try last cell in grid
+        if observer == "Unknown":
+            grid_cells = obs.select('.Observation-meta .GridFlex > .GridFlex-cell')
+            if len(grid_cells) >= 3:
+                last_cell = grid_cells[-1]
+                observer_span = last_cell.select_one('.u-sizeFill span:not(.is-visuallyHidden)')
+                if observer_span:
+                    observer = observer_span.get_text(strip=True)
 
         sighting = {
             "species": species,
-            "location": location_el.get_text(strip=True) if location_el else "Unknown",
-            "date": date_el.get_text(strip=True) if date_el else "Unknown",
-            "observer": observer_el.get_text(strip=True) if observer_el else "Unknown",
-            "count": count_el.get_text(strip=True) if count_el else "1",
+            "scientific_name": sci_name,
+            "location": location,
+            "date": date,
+            "observer": observer,
+            "count": count,
             "scraped_at": timestamp,
+            "species_url": species_url,
+            "location_url": location_url,
+            "checklist_url": checklist_url,
         }
-
-        # Extract links if available
-        if species_el and species_el.get('href'):
-            sighting["species_url"] = "https://ebird.org" + species_el['href'] if species_el['href'].startswith('/') else species_el['href']
-        if location_el and location_el.get('href'):
-            sighting["location_url"] = "https://ebird.org" + location_el['href'] if location_el['href'].startswith('/') else location_el['href']
 
         sighting["id"] = generate_sighting_id(sighting)
         return sighting
+
     except Exception as e:
-        print(f"Error parsing row: {e}")
+        print(f"Error parsing observation: {e}")
         return None
-
-
-def parse_species_section(section, timestamp: str) -> dict | None:
-    """Parse a species section element."""
-    try:
-        text = section.get_text(" ", strip=True)
-        if len(text) < 3:
-            return None
-
-        sighting = {
-            "species": text[:100],  # Limit length
-            "location": "See details",
-            "date": "Recent",
-            "observer": "Unknown",
-            "count": "1",
-            "scraped_at": timestamp,
-        }
-        sighting["id"] = generate_sighting_id(sighting)
-        return sighting
-    except Exception:
-        return None
-
-
-def parse_generic_alerts(soup, timestamp: str) -> list[dict]:
-    """Generic fallback parser for alert data."""
-    sightings = []
-
-    # Look for any links that might be species
-    for link in soup.select('a[href*="/species/"], a[href*="speciesCode"]'):
-        species = link.get_text(strip=True)
-        if species and len(species) > 2:
-            sighting = {
-                "species": species,
-                "location": "Unknown",
-                "date": "Recent",
-                "observer": "Unknown",
-                "count": "1",
-                "scraped_at": timestamp,
-                "species_url": "https://ebird.org" + link['href'] if link['href'].startswith('/') else link['href'],
-            }
-            sighting["id"] = generate_sighting_id(sighting)
-            sightings.append(sighting)
-
-    return sightings
 
 
 def load_existing_sightings() -> list[dict]:
@@ -184,7 +175,7 @@ def generate_html(sightings: list[dict]) -> None:
     """Generate the HTML page with DataTables."""
     template = Template(HTML_TEMPLATE)
 
-    # Sort by scrape date, newest first
+    # Sort by date, newest first
     sorted_sightings = sorted(
         sightings,
         key=lambda x: x.get("scraped_at", ""),
@@ -279,11 +270,23 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         .species-link:hover {
             text-decoration: underline;
         }
+        .scientific-name {
+            color: #888;
+            font-style: italic;
+            font-size: 0.9em;
+        }
         .location-link {
             color: #666;
             text-decoration: none;
         }
         .location-link:hover {
+            color: #1a73e8;
+        }
+        .date-link {
+            color: #333;
+            text-decoration: none;
+        }
+        .date-link:hover {
             color: #1a73e8;
         }
         footer {
@@ -335,7 +338,6 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                     <th>Date</th>
                     <th>Observer</th>
                     <th>Count</th>
-                    <th>Scraped</th>
                 </tr>
             </thead>
             <tbody>
@@ -347,6 +349,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         {% else %}
                         {{ s.species }}
                         {% endif %}
+                        {% if s.scientific_name %}
+                        <br><span class="scientific-name">{{ s.scientific_name }}</span>
+                        {% endif %}
                     </td>
                     <td>
                         {% if s.location_url %}
@@ -355,10 +360,15 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                         {{ s.location }}
                         {% endif %}
                     </td>
-                    <td>{{ s.date }}</td>
+                    <td>
+                        {% if s.checklist_url %}
+                        <a href="{{ s.checklist_url }}" target="_blank" class="date-link">{{ s.date }}</a>
+                        {% else %}
+                        {{ s.date }}
+                        {% endif %}
+                    </td>
                     <td>{{ s.observer }}</td>
                     <td>{{ s.count }}</td>
-                    <td>{{ s.scraped_at[:10] if s.scraped_at else 'N/A' }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -376,7 +386,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         $(document).ready(function() {
             $('#sightings-table').DataTable({
                 pageLength: 25,
-                order: [[5, 'desc']],  // Sort by scraped date, newest first
+                order: [[2, 'desc']],  // Sort by date, newest first
                 responsive: true,
                 language: {
                     search: "Filter:",
@@ -406,18 +416,12 @@ def main():
             new_sightings = scrape_alerts(page)
 
             if new_sightings:
-                existing = load_existing_sightings()
-                merged = merge_sightings(existing, new_sightings)
-                save_sightings(merged)
-                generate_html(merged)
+                # Start fresh with new data structure
+                save_sightings(new_sightings)
+                generate_html(new_sightings)
             else:
-                print("No sightings found - generating HTML with existing data")
-                existing = load_existing_sightings()
-                if existing:
-                    generate_html(existing)
-                else:
-                    print("No existing data either - creating empty page")
-                    generate_html([])
+                print("No sightings found - generating empty page")
+                generate_html([])
 
         finally:
             browser.close()
