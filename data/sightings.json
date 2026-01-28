@@ -1,1 +1,983 @@
-[]
+[
+  {
+    "species": "Snow GooseAnser caerulescens",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "0bbb36780c12"
+  },
+  {
+    "species": "Ross's GooseAnser rossii",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "716b12468816"
+  },
+  {
+    "species": "Greater White-fronted GooseAnser albifrons",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "5e3b572a0805"
+  },
+  {
+    "species": "Cackling GooseBranta hutchinsii",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "a9782b09786a"
+  },
+  {
+    "species": "Cackling Goose (Richardson's)Branta hutchinsii hutchinsii",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "44c7f1d490e9"
+  },
+  {
+    "species": "Mute SwanCygnus olor",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "390cb501bddb"
+  },
+  {
+    "species": "Trumpeter SwanCygnus buccinator",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "07082ad55372"
+  },
+  {
+    "species": "Blue-winged TealSpatula discors",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "70ec45a7ec7a"
+  },
+  {
+    "species": "Eurasian WigeonMareca penelope",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "973488138798"
+  },
+  {
+    "species": "American WigeonMareca americana",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "8d3dfec336d3"
+  },
+  {
+    "species": "Northern PintailAnas acuta",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "6219822ae5f4"
+  },
+  {
+    "species": "Mallard x Northern Pintail (hybrid)Anas platyrhynchos x acuta",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "a1d348b7ca6c"
+  },
+  {
+    "species": "CanvasbackAythya valisineria",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "30858e1788c9"
+  },
+  {
+    "species": "RedheadAythya americana",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "7ff03e4812d6"
+  },
+  {
+    "species": "Canvasback x Redhead (hybrid)Aythya valisineria x americana",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "f2dbe291fb46"
+  },
+  {
+    "species": "Tufted DuckAythya fuligula",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "9d98fd9ad9d8"
+  },
+  {
+    "species": "Greater ScaupAythya marila",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "7719c3619c76"
+  },
+  {
+    "species": "Lesser ScaupAythya affinis",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "78bad2c04b10"
+  },
+  {
+    "species": "Common EiderSomateria mollissima",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "4c74f9607985"
+  },
+  {
+    "species": "Harlequin DuckHistrionicus histrionicus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "9587d3fd134b"
+  },
+  {
+    "species": "White-winged ScoterMelanitta deglandi",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "fda7012976fd"
+  },
+  {
+    "species": "Common GoldeneyeBucephala clangula",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "1ebe3e431979"
+  },
+  {
+    "species": "Barrow's GoldeneyeBucephala islandica",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "5ae79f08e038"
+  },
+  {
+    "species": "Common Merganser (North American)Mergus merganser americanus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "02ebaf851aed"
+  },
+  {
+    "species": "Common MerganserMergus merganser",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "db5abd9d14ca"
+  },
+  {
+    "species": "Wild TurkeyMeleagris gallopavo",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "7ad7a8df3164"
+  },
+  {
+    "species": "Ring-necked PheasantPhasianus colchicus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "21a906ba5975"
+  },
+  {
+    "species": "Rock PigeonColumba livia",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "5282221404ca"
+  },
+  {
+    "species": "Virginia RailRallus limicola",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "bf8e16ff6680"
+  },
+  {
+    "species": "KilldeerCharadrius vociferus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "a04b4a997e0f"
+  },
+  {
+    "species": "Piping PloverCharadrius melodus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "40b068e47082"
+  },
+  {
+    "species": "American WoodcockScolopax minor",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "ad0e6311bf0b"
+  },
+  {
+    "species": "Wilson's SnipeGallinago delicata",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "9f5cc3c95860"
+  },
+  {
+    "species": "Lesser YellowlegsTringa flavipes",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "a425e641ea2e"
+  },
+  {
+    "species": "Greater YellowlegsTringa melanoleuca",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "3967be9d3ec1"
+  },
+  {
+    "species": "Purple SandpiperCalidris maritima",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "390761df1ca8"
+  },
+  {
+    "species": "RazorbillAlca torda",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "9e70c796637b"
+  },
+  {
+    "species": "DovekieAlle alle",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "4a4f7e5b3d5a"
+  },
+  {
+    "species": "Thick-billed MurreUria lomvia",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "f06fa8c568ee"
+  },
+  {
+    "species": "Bonaparte's GullChroicocephalus philadelphia",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "6f855cd11628"
+  },
+  {
+    "species": "Black-headed GullChroicocephalus ridibundus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "c6138e6513c1"
+  },
+  {
+    "species": "Laughing GullLeucophaeus atricilla",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "c559ddbf1572"
+  },
+  {
+    "species": "Glaucous GullLarus hyperboreus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "458da9f9f089"
+  },
+  {
+    "species": "American Herring x Glaucous Gull (hybrid)Larus smithsonianus x hyperboreus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "7acd5c6af928"
+  },
+  {
+    "species": "Lesser Black-backed GullLarus fuscus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "0c7d96dabcaf"
+  },
+  {
+    "species": "Iceland GullLarus glaucoides",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "e5f77d95af7c"
+  },
+  {
+    "species": "Iceland Gull (kumlieni)Larus glaucoides kumlieni",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "efce9ff0e7fe"
+  },
+  {
+    "species": "Iceland Gull (kumlieni/glaucoides)Larus glaucoides kumlieni/glaucoides",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "934f2387c4ca"
+  },
+  {
+    "species": "Iceland Gull (Thayer's)Larus glaucoides thayeri",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "9f544e8cf9e0"
+  },
+  {
+    "species": "Iceland Gull (thayeri/kumlieni)Larus glaucoides thayeri/kumlieni",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "87adec3614b9"
+  },
+  {
+    "species": "Red-necked GrebePodiceps grisegena",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "0bea2234e43c"
+  },
+  {
+    "species": "Pacific LoonGavia pacifica",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "5781b6d815ff"
+  },
+  {
+    "species": "Black-crowned Night HeronNycticorax nycticorax",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "41795f088bc6"
+  },
+  {
+    "species": "Black VultureCoragyps atratus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "e2a99ccda094"
+  },
+  {
+    "species": "Turkey VultureCathartes aura",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "5e148d9456bf"
+  },
+  {
+    "species": "Golden EagleAquila chrysaetos",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "3f8a8d6048c3"
+  },
+  {
+    "species": "American GoshawkAstur atricapillus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "8415f027fd6a"
+  },
+  {
+    "species": "Bald EagleHaliaeetus leucocephalus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "5bef2a648539"
+  },
+  {
+    "species": "Red-shouldered HawkButeo lineatus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "ad7c22670b41"
+  },
+  {
+    "species": "Red-shouldered Hawk (lineatus Group)Buteo lineatus [lineatus Group]",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "c81a0ee0a8b4"
+  },
+  {
+    "species": "Red-tailed Hawk (abieticola)Buteo jamaicensis abieticola",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "d2b644ae8b66"
+  },
+  {
+    "species": "Rough-legged HawkButeo lagopus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "f5caaa2223d8"
+  },
+  {
+    "species": "Eastern Screech-OwlMegascops asio",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "6c33c80a04fe"
+  },
+  {
+    "species": "Short-eared OwlAsio flammeus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "bc9940afe954"
+  },
+  {
+    "species": "Short-eared Owl (Northern)Asio flammeus flammeus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "3d0f90d7e84e"
+  },
+  {
+    "species": "Yellow-bellied SapsuckerSphyrapicus varius",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "b7dee198ea8d"
+  },
+  {
+    "species": "Red-headed WoodpeckerMelanerpes erythrocephalus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "8a26a605cf4f"
+  },
+  {
+    "species": "Peregrine FalconFalco peregrinus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "831f864aa965"
+  },
+  {
+    "species": "Northern ShrikeLanius borealis",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "f82225148c0b"
+  },
+  {
+    "species": "Fish CrowCorvus ossifragus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "047a3a2c3648"
+  },
+  {
+    "species": "Horned LarkEremophila alpestris",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "edf4bfcc8d19"
+  },
+  {
+    "species": "Tree SwallowTachycineta bicolor",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "7791aaa082d3"
+  },
+  {
+    "species": "Ruby-crowned KingletCorthylio calendula",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "e36fbfe57406"
+  },
+  {
+    "species": "Marsh WrenCistothorus palustris",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "56a079bc2c5d"
+  },
+  {
+    "species": "Carolina Wren (Northern)Thryothorus ludovicianus [ludovicianus Group]",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "e3855cb6f99e"
+  },
+  {
+    "species": "Gray CatbirdDumetella carolinensis",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "adeb383efc56"
+  },
+  {
+    "species": "Brown ThrasherToxostoma rufum",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "61895dea3652"
+  },
+  {
+    "species": "Northern MockingbirdMimus polyglottos",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "64b4f7d007af"
+  },
+  {
+    "species": "Eastern BluebirdSialia sialis",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "03d356ee9eaa"
+  },
+  {
+    "species": "Townsend's SolitaireMyadestes townsendi",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "d9a953f14fa2"
+  },
+  {
+    "species": "Evening GrosbeakHesperiphona vespertina",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "8f245a87bb94"
+  },
+  {
+    "species": "Pine GrosbeakPinicola enucleator",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "db428b351b38"
+  },
+  {
+    "species": "Purple FinchHaemorhous purpureus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "d58df5c6f9a6"
+  },
+  {
+    "species": "Red CrossbillLoxia curvirostra",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "61a63208efb0"
+  },
+  {
+    "species": "White-winged CrossbillLoxia leucoptera",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "8fe951ea8f49"
+  },
+  {
+    "species": "Lapland LongspurCalcarius lapponicus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "6563be43cdb3"
+  },
+  {
+    "species": "Cassin's SparrowPeucaea cassinii",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "aabceea38f98"
+  },
+  {
+    "species": "Chipping SparrowSpizella passerina",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "99ab60346cac"
+  },
+  {
+    "species": "Clay-colored SparrowSpizella pallida",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "890eab1b1c20"
+  },
+  {
+    "species": "Field SparrowSpizella pusilla",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "2daaeafadd93"
+  },
+  {
+    "species": "Lark SparrowChondestes grammacus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "1820278aa062"
+  },
+  {
+    "species": "American Tree SparrowSpizelloides arborea",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "3734b99712d0"
+  },
+  {
+    "species": "Fox SparrowPasserella iliaca",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "90d0e8939df1"
+  },
+  {
+    "species": "Dark-eyed Junco (Oregon)Junco hyemalis [oreganus Group]",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "0cc9dc4fc051"
+  },
+  {
+    "species": "White-crowned Sparrow (leucophrys)Zonotrichia leucophrys leucophrys",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "8bde610af669"
+  },
+  {
+    "species": "White-crowned Sparrow (Gambel's)Zonotrichia leucophrys gambelii",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "563f8b8189c7"
+  },
+  {
+    "species": "White-crowned SparrowZonotrichia leucophrys",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "a7f16ea6f34a"
+  },
+  {
+    "species": "Savannah SparrowPasserculus sandwichensis",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "2d92c66041ae"
+  },
+  {
+    "species": "Lincoln's SparrowMelospiza lincolnii",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "857f0fec1e6c"
+  },
+  {
+    "species": "Eastern TowheePipilo erythrophthalmus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "49f817c381c7"
+  },
+  {
+    "species": "Eastern Towhee (Red-eyed)Pipilo erythrophthalmus erythrophthalmus/canaster",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "de5132f2dde6"
+  },
+  {
+    "species": "Eastern MeadowlarkSturnella magna",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "f0fd4436d362"
+  },
+  {
+    "species": "Rusty BlackbirdEuphagus carolinus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "e46322a4392e"
+  },
+  {
+    "species": "Orange-crowned WarblerLeiothlypis celata",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "d56faaf46b4e"
+  },
+  {
+    "species": "Northern Yellow WarblerSetophaga aestiva",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "e1cdc5674ebb"
+  },
+  {
+    "species": "Pine WarblerSetophaga pinus",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "c328b65176f9"
+  },
+  {
+    "species": "Yellow-throated WarblerSetophaga dominica",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "579c2d066c4a"
+  },
+  {
+    "species": "Northern Cardinal (Common)Cardinalis cardinalis [cardinalis Group]",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "35179a2d543a"
+  },
+  {
+    "species": "Painted BuntingPasserina ciris",
+    "location": "Unknown",
+    "date": "Unknown",
+    "observer": "Unknown",
+    "count": "1",
+    "scraped_at": "2026-01-28T03:48:19.323396Z",
+    "id": "47e21683a327"
+  }
+]
