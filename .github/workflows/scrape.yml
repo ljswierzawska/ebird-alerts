@@ -32,12 +32,9 @@ jobs:
         run: |
           pip install -r requirements.txt
           playwright install chromium
-          playwright install-deps chromium
+          sudo playwright install-deps chromium
 
       - name: Run scraper
-        env:
-          EBIRD_USERNAME: ${{ secrets.EBIRD_USERNAME }}
-          EBIRD_PASSWORD: ${{ secrets.EBIRD_PASSWORD }}
         run: python scraper.py
 
       - name: Commit updated data

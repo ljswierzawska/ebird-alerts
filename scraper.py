@@ -2,10 +2,10 @@
 """
 eBird Alert Scraper
 Scrapes rare bird sightings from eBird alerts using Playwright.
+No login required - the alert summary page is publicly accessible.
 """
 
 import json
-import os
 import hashlib
 from datetime import datetime
 from pathlib import Path
@@ -27,52 +27,17 @@ def generate_sighting_id(sighting: dict) -> str:
     return hashlib.md5(unique_str.encode()).hexdigest()[:12]
 
 
-def login_to_ebird(page, username: str, password: str) -> bool:
-    """Login to eBird with provided credentials."""
-    print("Navigating to eBird...")
-    page.goto("https://ebird.org/home")
-
-    # Click sign in link
-    try:
-        page.click('a[href*="login"], .Header-link--signIn, text="Sign in"', timeout=10000)
-    except Exception:
-        # May already be on login page or logged in
-        pass
-
-    # Wait for login form
-    page.wait_for_selector('input[name="username"], input[type="email"], #input-user-name', timeout=15000)
-
-    # Fill credentials
-    username_input = page.query_selector('input[name="username"], input[type="email"], #input-user-name')
-    password_input = page.query_selector('input[name="password"], input[type="password"], #input-password')
-
-    if username_input and password_input:
-        username_input.fill(username)
-        password_input.fill(password)
-
-        # Submit form
-        submit_btn = page.query_selector('button[type="submit"], input[type="submit"], .Button--primary')
-        if submit_btn:
-            submit_btn.click()
-        else:
-            page.keyboard.press("Enter")
-
-        # Wait for redirect after login
-        page.wait_for_load_state("networkidle", timeout=30000)
-        print("Login successful!")
-        return True
-
-    return False
-
-
 def scrape_alerts(page) -> list[dict]:
     """Scrape bird sightings from the alerts page."""
     print(f"Navigating to alerts: {ALERT_URL}")
-    page.goto(ALERT_URL)
-    page.wait_for_load_state("networkidle", timeout=30000)
+    page.goto(ALERT_URL, wait_until="networkidle", timeout=60000)
 
     # Wait for content to load
-    page.wait_for_selector('.Observation, .sighting, table, .ResultsStats', timeout=30000)
+    print("Waiting for page content...")
+    page.wait_for_selector('body', timeout=30000)
+
+    # Give JavaScript time to render
+    page.wait_for_timeout(3000)
 
     html = page.content()
     soup = BeautifulSoup(html, "lxml")
@@ -428,26 +393,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
 def main():
     """Main entry point."""
-    username = os.environ.get("EBIRD_USERNAME")
-    password = os.environ.get("EBIRD_PASSWORD")
-
-    if not username or not password:
-        print("Error: EBIRD_USERNAME and EBIRD_PASSWORD environment variables required")
-        print("Set them with: export EBIRD_USERNAME='your_email' EBIRD_PASSWORD='your_password'")
-        return 1
+    print("Starting eBird Alert Scraper (no login required)")
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
         page = context.new_page()
 
         try:
-            if not login_to_ebird(page, username, password):
-                print("Error: Failed to login to eBird")
-                return 1
-
             new_sightings = scrape_alerts(page)
 
             if new_sightings:
@@ -467,6 +422,7 @@ def main():
         finally:
             browser.close()
 
+    print("Done!")
     return 0
 
 
